@@ -1,0 +1,12 @@
+name = "DFTroll"
+uuid = "315abb6a-9685-11e8-3869-73007db45b77"
+authors = ["ponet <louisponet@gmail.com>"]
+version = "0.1.0"
+
+[deps]
+Crystals = "2c71e7ee-d617-5e33-8739-0c480ea2ee55"
+FFTW = "7a1cc6ca-52ef-59f5-83cd-3a7055c09341"
+GeometryTypes = "4d00f742-c7ba-57c2-abde-4428a4b178cb"
+LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
+StaticArrays = "90137ffa-7385-5640-81b9-e52037218182"
+Unitful = "1986cc42-f94f-5a68-af5c-568840ba703d"
