@@ -14,5 +14,3 @@ function Eewald(ρ, grid, Eself)
     ϕ = solve_poisson(ρ, grid) #potential from ρ
     return EHartree(ϕ, ρ, grid) - Eself
 end
-
-Eexchange_LDA(ρ) = -3//4*(3/π)^(1/3) * sum( ρ .^ (3/4))
