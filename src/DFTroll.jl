@@ -1,8 +1,11 @@
 module DFTroll
-    using GeometryTypes, LinearAlgebra, Base.Cartesian
+    using LinearAlgebra, Base.Cartesian
+    using StaticaArrays
     using FFTW, Unitful, Crystals
+    using Parameters
     # Unitful.register(@__MODULE__)
     include("constants.jl")
+    # include("types.jl")
         # const UH = UnitfulHartree
     # export UnitfulHartree, Unitful, @u_str
     # export a₀

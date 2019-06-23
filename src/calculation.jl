@@ -22,9 +22,6 @@ end
 
 LinearAlgebra.dot(wfc1::PWWavefunction, wfc2::PWWavefunction) = dot(wfc1.coeffs, wfc2.coeffs)
 
-
-
-
 #Sets up all ion related and initializes the wavefunctions
 struct Calculation{T, DIM}
     crystal      ::Crystal{T}
@@ -33,7 +30,9 @@ struct Calculation{T, DIM}
     ρr           ::Array{T, DIM}
     Eewald       ::T
 end
-function pwcalculation(crystal::Crystal{T}, Ggridsize::NTuple{3}, kgridsize::NTuple{3}, ionic_ρdistribution, nbands, ) where  T
+function pwcalculation(crystal::Crystal{T}, kgridsize::NTuple{3}, ecutwfc, ionic_ρdistribution, nbands) where  T
+	ng1, ng2, ng3 = ecut2nG(crystal.cell, ecutwfc)
+
     pwgrid        = PWGrid(crystal.cell, Ggridsize)
     allwfcs =[[PWWavefunction(Vec{3, T}(k1, k2, k3), Ggridsize) for b=1:nbands] for k1=1:kgridsize[1],k2=1:kgridsize[2],k3=1:kgridsize[3]]
 
